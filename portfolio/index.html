@@ -27,7 +27,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/IRRAc9/Image/%E5%A4%B4%E5%83%8F.jpg">
 <meta property="article:published_time" content="2024-03-27T19:16:58.000Z">
-<meta property="article:modified_time" content="2024-04-02T18:21:16.621Z">
+<meta property="article:modified_time" content="2024-04-09T18:09:56.968Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/IRRAc9/Image/%E5%A4%B4%E5%83%8F.jpg">
@@ -662,7 +662,73 @@
             width: 60%; /* 相对于父元素宽度的50% */
             float: left;
         }
+        .subheading {
+            padding: 20px 10px;
+            margin-top: 40px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .subheading-container {
+            background: rgb(149, 178, 255);
+            border-radius: 10px;
+            font-size: 22px;
+            color: white;
+            /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); */
+            padding: 10px;
+            display: inline-block;
+        }
+        .content {
+        margin-top: 10px;
+        }
+        /* .subheading {
+            background: rgb(149, 178, 255);
+            border-radius: 10px;
+            font-size: 25px;
+            color: white;
+            margin-top: 40px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            display: inline-block;
+            font-weight: bold;
+        } */
+        @media only screen and (max-width: 600px) {
+            .shell {
+                height: auto;
+            }
+            .head {
+                height: 200px;
+            }
+            .cover {
+                top: 120px;
+                left: 10px;
+                width: 110px;
+            }
+            .data {
+                padding: 150px 0 0 180px;
+            }
+            .data .title1 {
+                font-size: 30px;
+            }
+            .data .title2 {
+                font-size: 18px;
+            }
+            .tags {
+                padding: 10px 0;
+                width: 100%;
+                float: none;
+            }
+            .tag {
+                margin: 0 4px;
+            }
+            .introduce {
+                padding: 5% 5% 0 5%;
+                max-width: 100%;
+                width: 100%;
+                float: none;
+            }
+        }
     </style>
+    
 </head>
 
 <body>
@@ -693,14 +759,19 @@
             <div class="introduce">
                 <p>
                     Hello everyone, Hi, I'm currently a junior at Shandong University, majoring in Digital Media Technology.The career direction is special effects for film and TV/games. 
+                </p>
             </div>
         </div>
     </div>
-
+    <div class="subheading">
+        <div class="subheading-container">Poster Design</div>
+        <div class="content">海报设计</div>
+    </div>
 </body>
 
+</html>
 
-</html> 
+
 
         
     </div>
