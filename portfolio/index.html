@@ -18,16 +18,16 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="Introduction              * {             padding: 0;             margin: 0;             box-sizing: border-box;         }         body {             width: 100%;             height:">
+        <meta name="description" content="Introduction              * {             padding: 0;             margin: 0;             box-sizing: border-box;         }         body">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Portfolio">
 <meta property="og:url" content="http://example.com/portfolio/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Introduction              * {             padding: 0;             margin: 0;             box-sizing: border-box;         }         body {             width: 100%;             height:">
+<meta property="og:description" content="Introduction              * {             padding: 0;             margin: 0;             box-sizing: border-box;         }         body">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/IRRAc9/Image/%E5%A4%B4%E5%83%8F.jpg">
 <meta property="article:published_time" content="2024-03-27T19:16:58.000Z">
-<meta property="article:modified_time" content="2024-04-09T18:09:56.968Z">
+<meta property="article:modified_time" content="2024-04-14T17:58:44.109Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/IRRAc9/Image/%E5%A4%B4%E5%83%8F.jpg">
@@ -554,6 +554,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap"rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://static.fontawesome.com/css/fontawesome-app.css">
+    <!-- 引入字体图标 -->
+    <link rel="stylesheet" href="./font/iconfont.css">
+    <!-- 引入字体 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400&display=swap">
     <title>Introduction</title>
     <style>
         * {
@@ -691,6 +700,58 @@
             display: inline-block;
             font-weight: bold;
         } */
+        .out{
+            width:600px;
+            height:1000px;
+            position:relative;
+            margin:0 auto;
+            top:100px;
+            .inner{
+                width:100%;
+                height:100%;
+                .img{
+                    width:400px;
+                    height:200px;
+                    position: absolute;
+                    transition:0.35;
+                    img{
+                        width:100%;
+                        height:100%;
+                    }
+                }
+            }
+        }
+        .arrow{
+            font-size:37px;
+            i {
+                position:absolute;
+                color:#fff;
+                z-index:9999;
+                cursor:pointer;
+            }
+            .left{
+                left:0;
+            }
+            .right{
+                left:780px;
+            }
+        }
+        .button{
+            width:175px;
+            height:15px;
+            position:absolute;
+            z-index:9999;
+            left:50%;
+            transform:translateX(-50%);
+            p{
+                width:15px;
+                height:15px;
+                float:left;
+                margin:0 5px;
+                cursor:pointer;
+                background-color:#fff;
+            }
+        }
         @media only screen and (max-width: 600px) {
             .shell {
                 height: auto;
@@ -768,6 +829,7 @@
         <div class="content">海报设计</div>
     </div>
 </body>
+
 
 </html>
 
