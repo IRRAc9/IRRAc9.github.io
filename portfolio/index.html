@@ -18,16 +18,20 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content=".portbody {         width: 100%;         height: 100vh;         display: flex;         justify-content: center;         align-items: center;         background-image: linear-gra">
+        <meta name="description" content=".portbody {         width: 100%;         height: 100vh;         display: flex;         justify-content: center;         align-items: center;">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Portfolio">
 <meta property="og:url" content="http://example.com/portfolio/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content=".portbody {         width: 100%;         height: 100vh;         display: flex;         justify-content: center;         align-items: center;         background-image: linear-gra">
+<meta property="og:description" content=".portbody {         width: 100%;         height: 100vh;         display: flex;         justify-content: center;         align-items: center;">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/IRRAc9/Image/%E5%A4%B4%E5%83%8F.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/IRRAc9/Image/%E6%B3%95%E9%98%B5%20(%E5%8E%8B%E7%BC%A9%E5%90%8E).gif">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/IRRAc9/Image/%E6%94%BB%E5%87%BB%20(%E5%8E%8B%E7%BC%A9%E5%90%8E).gif">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/IRRAc9/Image/test.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/IRRAc9/Image/test.jpg">
 <meta property="article:published_time" content="2024-03-27T19:16:58.000Z">
-<meta property="article:modified_time" content="2024-04-21T20:03:12.365Z">
+<meta property="article:modified_time" content="2024-04-22T08:19:11.304Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/IRRAc9/Image/%E5%A4%B4%E5%83%8F.jpg">
@@ -551,12 +555,15 @@
             <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap"rel="stylesheet"> -->
-    <!-- <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400&display=swap">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="./photos_style.css" /> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./FXstyle.css">
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.1/css/all.min.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap"rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400&display=swap"> -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" /> -->
+    <!-- <link rel="stylesheet" href="./photos_style.css" /> -->
+    <!-- <script src="./photos_style.js.js"></script> -->
 </head>
 <style>
     .portbody {
@@ -678,6 +685,127 @@
     .content {
     margin-top: 10px;
     }
+    .photoshell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: grid;
+    grid-template-rows: 580px 70px;
+    } 
+    .box {
+    /*  将容器放置在第一行，其高度为第一行的高度 */
+    grid-row: 1 / 2;
+    /*  将容器放置在第一列，其宽度为第一到第八列的宽度 */
+    grid-column: 1 / 8;
+    width: 75vw;
+    height: 532px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* 设置 3D 转换，以便于创建立体效果 */
+    transform-style: preserve-3d;
+    /* 定义立体效果的观察距离 */
+    perspective: 400px;
+    /*  定义容器内包含的元素数量 */
+    --items: 6;
+    /* 定义容器内居中显示的元素 */
+    --middle: 3;
+    /* 定义容器内当前位置的元素 */
+    --position: 1;
+    }
+    div.item {
+        position: absolute;
+        width: 315px;
+        height: 480px;
+        background-color: white;
+        /* 定义一个 CSS 变量 --r 的值为 var(--position) - var(--offset) */
+        --r: calc(var(--position) - var(--offset));
+        /* 定义变量 --abs 的值为 var(--r) * -1 和 var(--r) 中的最大值 */
+        --abs: max(calc(var(--r) * -1), var(--r));
+        /* 元素的过渡效果为所有属性在 0.25 秒内以线性方式变化 */
+        transition: all 0.25s linear;
+        /* 旋转-10deg*var(--r)角度,并向x轴负方向平移-330px*var(--r) */
+        transform: rotateY(calc(-10deg * var(--r))) translateX(calc(-330px * var(--r)));
+        /* 使当前的图片位于最前面 */
+        z-index: calc((var(--position) - var(--abs)));
+        background-size: cover;
+        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.6);
+        border: #b5c5ff 10px solid;
+        border-radius: 5px;
+    }
+    input {
+        width: 20px;
+        height: 25px;
+        margin: 10px;
+    }
+    .box .item:nth-of-type(1) {
+        --offset: 1;
+        background-image: url(https://cdn.jsdelivr.net/gh/IRRAc9/Image/%E6%B3%95%E8%80%81%E6%B5%B7%E6%8A%A5.png);
+    }
+    .box .item:nth-of-type(2) {
+        --offset: 2;
+        background-image: url(https://cdn.jsdelivr.net/gh/IRRAc9/Image/%E6%AC%A7%E9%98%B3%E9%9D%96%E5%B9%BF%E6%92%AD%E7%AB%99%E6%B5%B7%E6%8A%A5.png);
+    }
+    .box .item:nth-of-type(3) {
+        --offset: 3;
+        background-image: url(https://cdn.jsdelivr.net/gh/IRRAc9/Image/%E6%8E%92%E6%92%AD%E8%A1%A8.png);
+    }
+    .box .item:nth-of-type(4) {
+        --offset: 4;
+        background-image: url(https://cdn.jsdelivr.net/gh/IRRAc9/Image/%E9%95%BF%E5%9B%BE.jpg);
+    }
+    .box .item:nth-of-type(5) {
+        --offset: 5;
+        background-image: url(https://cdn.jsdelivr.net/gh/IRRAc9/Image/%E7%88%B1%E5%A5%87%E8%89%BA%E6%A0%A1%E5%9B%AD%E6%97%A5%E5%8E%86.png);
+    }
+    .box .item:nth-of-type(6) {
+        --offset: 6;
+        background-image: url(https://cdn.jsdelivr.net/gh/IRRAc9/Image/%E6%9C%A8%E5%A4%B4.jpg);
+    }
+    input:nth-of-type(1) {
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+    input:nth-of-type(2) {
+        grid-column: 3/4;
+        grid-row: 2/3;
+    }
+    input:nth-of-type(3) {
+        grid-column: 4/5;
+        grid-row: 2/3;
+    }
+    input:nth-of-type(4) {
+        grid-column: 5/6;
+        grid-row: 2/3;
+    }
+    input:nth-of-type(5) {
+        grid-column: 6/7;
+        grid-row: 2/3;
+    }
+    input:nth-of-type(6) {
+        grid-column: 6/7;
+        grid-row: 2/3;
+    }
+    input:nth-of-type(1):checked~.box {
+        --position: 1;
+    }
+    input:nth-of-type(2):checked~.box {
+        --position: 2;
+    }
+    input:nth-of-type(3):checked~.box {
+        --position: 3;
+    }
+    input:nth-of-type(4):checked~.box {
+        --position: 4;
+    }
+    input:nth-of-type(5):checked~.box {
+        --position: 5;
+    }
+    input:nth-of-type(6):checked~.box {
+        --position: 6;
+    }
     @media only screen and (max-width: 600px) {
         .shell {
             height: auto;
@@ -714,6 +842,22 @@
             max-width: 100%;
             width: 100%;
             float: none;
+        }
+        .photoshell {
+        grid-template-rows: 340px 100px; /* 调整网格行高度 */
+    }
+        .box {
+            width: 90vw; /* 调整容器宽度 */
+            height: 400px; /* 调整容器高度 */
+        }
+        div.item {
+            width: 190px; /* 调整元素宽度 */
+            height: 290px; /* 调整元素高度 */
+        }
+        input {
+            width: 15px; /* 调整输入框宽度 */
+            height: 15px; /* 调整输入框高度 */
+            margin: 4px; /* 调整输入框边距 */
         }
     }
 </style>
@@ -753,6 +897,92 @@
     <div class="subheading-container">Poster Design</div>
     <div class="content">海报设计</div>
 </div>
+<div class="photoshell">
+    <input type="radio" name="position">
+    <input type="radio" name="position">
+    <input type="radio" name="position" checked>
+    <input type="radio" name="position">
+    <input type="radio" name="position">
+    <div class="box">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+</div>
+<div class="subheading">
+    <div class="subheading-container">Special Effects Design</div>
+    <div class="content">特效设计（UE制作）</div>
+</div>
+<div class="container">
+<div class="card" style="--clr: #009688;">
+    <div class="imgBox">
+    <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/IRRAc9/Image/%E6%B3%95%E9%98%B5%20(%E5%8E%8B%E7%BC%A9%E5%90%8E).gif"
+                     
+                >
+    </div>
+    <div class="content">
+    <h2>魔法阵特效</h2>
+    <p>星座魔法阵特效融合了魔法阵、星座和旋转球体，带你进入神秘的奇幻世界。随机浮现的星座、旋转的球体以及地板上的磨损和小石头，共同营造出一个充满动感和神秘感的体验。</p>
+    </div>
+</div>
+<div class="card " style="--clr: #ff3e7f;">
+    <div class="imgBox">
+    <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/IRRAc9/Image/%E6%94%BB%E5%87%BB%20(%E5%8E%8B%E7%BC%A9%E5%90%8E).gif"
+                     
+                >
+    </div>
+    <div class="content">
+    <h2>攻击特效</h2>
+    <p>这个特效以红色为主色调，光芒闪烁。红色光芒在空中舞动，形成华丽的图案。每一次挥动都散发出强大的能量。这是一种简洁而又引人入胜的攻击特效，必能吸引眼球，给战斗增添一丝神秘的魔力。</p>
+    </div>
+</div>
+<!-- <div class="card" style="--clr: #03a9f4;">
+    <div class="imgBox">
+    <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/IRRAc9/Image/test.jpg"
+                     
+                >
+    </div>
+    <div class="content">
+    <h2>TEST</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa eius molestias possimus ullam facere fugiat
+        eligendi adipisci consequuntur quos expedita.</p>
+    </div>
+</div>
+<div class="card" style="--clr: #03a9f4;">
+    <div class="imgBox">
+    <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="https://cdn.jsdelivr.net/gh/IRRAc9/Image/test.jpg"
+                     
+                >
+    </div>
+    <div class="content">
+    <h2>TEST</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa eius molestias possimus ullam facere fugiat
+        eligendi adipisci consequuntur quos expedita.</p>
+    </div>
+</div> -->
+<div class="subheading">
+    <div class="subheading-container">Modeling Production</div>
+    <div class="content">建模制作</div>
+</div>
+<!-- <div class="subheading">
+    <div class="subheading-container">Photography</div>
+    <div class="content">摄影作品</div>
+</div> -->
+
 
 
         
